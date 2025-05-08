@@ -87,15 +87,15 @@ The Identity Lifecycle Management (ILM) Playbook serves as a practical guide for
 This guidance requires federal departments and agencies to adopt a Zero Trust Architecture (ZTA) and implement phishing-resistant authentication methods. NIST Special Publication 800-207 defines the five pillars of ZTA, highlighting the Identity Pillar as its core foundation. This framework emphasizes the importance of shifting the focus from managing credentials to managing identities across agencies and departments.
 
 This update to the ILM Playbook will address important drivers of change that impact agency ILM strategies, policies, and capabilities.
-+ new derived PIV (DPIV) and Federated PIV requirements and terminology
-+ current best practices in deploying phishing resistant authentication for Pre-PIV and No-PIV use cases
-+ shift from Continuous Diagnostics and Mitigation (CDM) dashboard reporting capabilities to agency CDM ICAM tools
-+ normative and informative guidance for hybrid cloud identity solutions and ICAM best practices
-+ focus on agency user journeys to reduce waste, improve user experiences, and improve workforce accountability
+- New derived PIV (DPIV) and Federated PIV requirements and terminology
+- Current best practices in deploying phishing resistant authentication for Pre-PIV and No-PIV use cases
+- Shift from Continuous Diagnostics and Mitigation (CDM) dashboard reporting capabilities to agency CDM ICAM tools
+- Normative and informative guidance for hybrid cloud identity solutions and ICAM best practices
+- Focus on agency user journeys to reduce waste, improve user experiences, and improve workforce accountability
 
 This version of the ILM Playbook expands on the Joiner-Mover-Leaver framework by providing detailed guidance on how agencies can implement an effective identity lifecycle approach. It outlines practical strategies and mechanisms for leveraging the tools commonly found in enterprise identity management systems (IdMS), including ICAM tools provided through the CDM program. 
 
-The updates to the ILMplaybook defines ILM as stages of an identity from creation to retirement from a ZTA perspective and how the ILM is driven by ZTA principles described as the Identity Governance Administration, of Creator, Provisioning, Deactivation process.
+The updates to the ILM Playbook defines ILM as stages of an identity from creation to retirement from a ZTA perspective and how the ILM is driven by ZTA principles described as the Identity Governance Administration, of Creator, Provisioning, Deactivation process.
 
 Importantly the updates in this document also include the alternatives to PIV with NIST approved non-PIV phishing resistant credentials such as Fast Identity Online (FIDO) and capturing additional information in the MUR.
 
@@ -147,7 +147,7 @@ Below are key terms used throughout this Playbook. A linked term denotes it is a
 - [Coupling](https://csrc.nist.gov/pubs/sp/800/217/fpd){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"}. Indicates a logical connection established between an IdP and an IdP subscriber's PIV Identity Account maintained by the user's home agency. Coupling enables the IdP to verify the user's real-time PIV status and the status of any PIV or DPIV credentials bound to the user.
 - [CRED (CDM)](https://www.cisa.gov/sites/default/files/2023-08/CDM_Tech%20Volume2_v2.5.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"}. The CDM CRED (credentials and authenticators) capability ensures that account credentials are assigned to and are used only by authorized users or services to access agency systems, services, and facilities. CRED binds a type of credential or authenticator to an identity established in TRUST with a level of assurance and is used to grant logical access. 
 - [Derived PIV Credential](https://pages.nist.gov/FIPS201/FIPS201.html#s-c){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"} - A credential issued based on proof of possession and control of a PIV Card. Derived PIV credentials are typically used in situations that do not easily accommodate a PIV Card, such as in conjunction with mobile devices.
-- Alternative Phishing Resistant Credential - A credential that is equivalent to a PIV per NIST xAL requirements issued to identies where PIV is not accessible, mobile, interim, external, use cases.
+- Alternative Phishing Resistant Credential - A credential that is equivalent to a PIV per NIST xAL requirements issued to identities where PIV is not accessible, mobile, interim, external, use cases.
 - [Federal Enterprise Identity](https://www.whitehouse.gov/wp-content/uploads/2019/05/M-19-17.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"} - Refers to the unique representation of an employee, a contractor, an enterprise user, such as a mission or business partner, a device, or a technology that a federal agency manages to achieve its mission and business objectives. This is also known as a Workforce Identity.
 - [FIDO2](https://fidoalliance.org/fido2/){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"} - an open specification for phishing resistant authentication consisting of two separate specifications: WebAuthn, specified by the World Wide Web Consortium (W3C), and Client to Authenticator Protocol (CTAP), specified by the FIDO Alliance.
 - [Federation](https://csrc.nist.gov/glossary/term/federation){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"} - A process that allows for the conveyance of identity and authentication information across a set of networked systems.
@@ -165,7 +165,7 @@ Below are key terms used throughout this Playbook. A linked term denotes it is a
 - No-PIV. The short title of a federal ICAM use case that refers to authentication scenarios for federal information system subscribers that are not eligible for a PIV credential according to [OPM Credentialing Standards Procedures for Issuing Personal Identity Verification Cards under HSPD-12 and New Requirement for Suspension or Revocation of Eligibility for PIV Credentials](https://www.opm.gov/suitability/suitability-executive-agent/policy/cred-standards.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"}.
 - Passkeys - A passkey is a consumer-friendly term for a discoverable FIDO credential.
 - Persona - A digital identity unambiguously associated with a single person or non-person entity (NPE). A natural person (or NPE) may have multiple personas, each managed by one or more organizations.
-- Pre-PIV. The short title of a federal ICAM use case that refers to authentication scenarios for personnel that are eligible for a PIV credential and require access to federal information systems to work, but have not yet been issued a PIV credential.
+- Pre-PIV. The short title of a federal ICAM use-case that refers to authentication scenarios for personnel that are eligible for a PIV credential and require access to federal information systems to work, but have not yet been issued a PIV credential.
 - [PRIV (CDM)](https://www.cisa.gov/sites/default/files/2023-08/CDM_Tech%20Volume2_v2.5.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"} - The PRIV (privilege management) capability ensures that privileges for logical access are assigned to authorized people or accounts that require authorized access for job functions. This capability is dependent on the existence of a set of attributes that denote roles or characteristics that require or restrict specific privileges per policy. This capability provides the agency with insight into risks associated with authorized users being granted excessive privileges to facilities, systems, and information at any level of sensitivity. PRIV also has two sub-capabilities, Identity Lifecycle Management (ILM) and Privilege Access Management (PAM). ILM enables automation throughout the IDAM lifecycle by adjusting information in 
 connected repositories to address changing positions and responsibilities.
 - [Public Identity](https://www.whitehouse.gov/wp-content/uploads/2019/05/M-19-17.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"} - The unique representation of a subject that a federal agency interacts with, but does not directly manage, to achieve its mission and business objectives.
@@ -267,7 +267,7 @@ The creation stage establishes the identity in one or more authoritative identit
 
 Agencies may leverage identity creation outcomes--attributes and credentials--from the employee's hiring action to accelerate the creation phase. Hiring officials should verify the user's identifiers and attributes before making an offer of employment. Agencies should verify identities as a part of in-person and remote encounters during hiring and on-boarding, and verify authenticators or bind additional authenticators during enrollment. 
 
-This stage includes identity document validation, identity verification, remote proofing or in-person proofing, biometric enrollment, attribute verification, and status determination. Vetting is conmpleted, where required, through an adjudicated background investigation.  
+This stage includes identity document validation, identity verification, remote proofing or in-person proofing, biometric enrollment, attribute verification, and status determination. Vetting is completed, where required, through an adjudicated background investigation.  
 
 Agencies that have No-PIV and Pre-PIV use cases should leverage HSPD-12 enrollment capabilities and standards to meet non-PIV use cases. Creation for non-PIV subscribers should include biometric enrollment.
 
@@ -276,9 +276,9 @@ Agency enrollment records should be consistent with [NIST SP 800-156](https://cs
 ### **Stage 2 - Use: Read/Update**
 
 During this phase, "use" of identity records corresponds to distinct ILM functions:
-+ *provisioning*   creates a new resource account or a subscriber account at a credential service provider. 
-+ *syncing* polls attribute sources for changes and propagates changes to connected accounts according to governance rules.
-+ *reviewing* access can also be referred to as "recertifying" or "auditing". Access reviews revalidate subscriber and resource account status based on access policy rules. Recertification results may prompt manager action or, if automated, suspend that user's access.
+- *Provisioning*   creates a new resource account or a subscriber account at a credential service provider. 
+- *Syncing* polls attribute sources for changes and propagates changes to connected accounts according to governance rules.
+- *Reviewing* access can also be referred to as "recertifying" or "auditing". Access reviews revalidate subscriber and resource account status based on access policy rules. Recertification results may prompt manager action or, if automated, suspend that user's access.
 
 Provisioning additional accounts or entitlements can be implemented using a "birthright" policy--authorization to certain organizational resources is granted based on organizational membership. Birthright entitlements are easily automatable. Typical accounts provisioned in this way include network logon, productivity suite with email, VPN or SASE access, and enterprise authentication service/single sign-on. Agencies that are implementing the Pre-PIV and No-PIV use cases can leverage birthright provisioning during enrollment and bind the FIDO2 authenticator as a part of the encounter. 
 
@@ -296,7 +296,7 @@ Agencies that previously leveraged the CDM Dashboard to implement CRED, BEHAVE, 
 
 ### **Stage 3 - Deactivate: Delete**
 
-Deactivation - Deactivate or remove identities associated with a user record. IGA Processes associated with deactivation include suspension, archive, or deletion of accounts and credentials. IGA tools implement variations of "delete" can be a "hard" or "soft" delete. Consider requiring a human user action to perform a hard delete, and implement second-person review to confirm it. 
+Deactivation - Deactivate or remove identities associated with a user record. IGA Processes associated with deactivation include suspension, archive, or deletion of accounts and credentials. IGA tools implement variations of "delete" that can be a "hard" or "soft" delete. Consider requiring a human user action to perform a hard delete, and implement second-person review to confirm it. 
 
 Agencies will need to review their privacy, record retention, and log retention requirements when defining the "end" of identity lifecycles in agency ILM policies and when configuring IGA tools. 
 
@@ -307,12 +307,12 @@ Document an agency policy to identify the roles and responsibilities required to
 
 1. Outline the purpose of implementing ILM.
 2. The roles and responsibilities are mapped to the authoritative attribute source. Such as:
-    1. Training Office to gather security training status.
-    2. Security/Vetting Office to gather PIV eligibility status.
-    3. HR Office to gather employment information status.
-    4. Application Owners to identify entitlements that are appropriate to a role and assigned to a user.
-    5. Identify other offices as needed.
-    6. Assign credentials
+  a. Training Office to gather security training status.
+  b. Security/Vetting Office to gather PIV eligibility status.
+  c. HR Office to gather employment information status.
+  d. Application Owners to identify entitlements that are appropriate to a role and assigned to a user.
+  e. Identify other offices as needed.
+  f. Assign credentials
 3. Specific steps or actions for roles at each step of the ILM Create - Use - Deactivate process that aligns with the FICAM architecture identity management services.
 4. Agency or government references.
 5. A point of contact.
@@ -333,7 +333,7 @@ Agencies should describe ILM from the user's perspective to help orient stakehol
 
 <img src="{{site.baseurl}}/assets/playbooks/fido-alliance-user-journey-diagram.png" alt="Diagram illustrating a typical agency user journey" width="800">
 
-ILM is a critical part of improving phishing resistant authentication by leveraging FIDO credentials as a complemet to PKI credentials, such as PIV. 
+ILM is a critical part of improving phishing resistant authentication by leveraging FIDO credentials as a complement to PKI credentials, such as PIV. 
 
 The next section is about architecting and implementing identity lifecycle management using agency IdMS tools.
 
@@ -384,7 +384,7 @@ Consistent with CDM, a MUR contains aggregated attributes from multiple authorit
 | Agency HR                        | Initial User Profile (USAJobs) | Name, work role information, training and certification, Login.gov credential information |
 | Agency HR                         | Role            | Job Title, Department, Component, Location, Manager, User Type (Gov, Contractor, Non-Person, Other) |
 | Agency HR                         | Status          | Status (Active, Leave Type, Inactive, Suspended) |
-| Agency HR                         | PIV Status          | Status (Eligibile, Active, Revoked, ineligible) |
+| Agency HR                         | PIV Status          | Status (Eligible, Active, Revoked, ineligible) |
 | Agency IDMS                       | User            | Unique Identifier (UserID), Full Name, Email |
 | Agency IDMS                       | CRED            | Credential Types Issued |
 | Agency IDMS                       | Accounts        | List of accounts associated with this user |
@@ -395,7 +395,7 @@ Consistent with CDM, a MUR contains aggregated attributes from multiple authorit
 
 In most circumstances, the MUR's authority is consistent with the requirements for PIV identity accounts for PIV-eligible agency personnel. Agencies will also typically include PIV-ineligible users within their MUR in order to authoritatively operate ILM for their IdPs and resources. 
 
-The MUR should use its own identifiers for specific users to avoid collisions and facilitate identity resolution and probabalistic matching when separate identity records for a single human user are aggregated. Ideally, MUR identifiers are not human readable.
+The MUR should use its own identifiers for specific users to avoid collisions and facilitate identity resolution and probabilistic matching when separate identity records for a single human user are aggregated. Ideally, MUR identifiers are not human readable.
 
 Importantly, the syncing of status performed by an ILM capability between a specific user's PIV identity account in the MUR and the user's managed IdP subscriber account for a derived PIV meets the requirement to check PIV identity account status per federated transaction by NIST SP 800-157-1 and NIST SP 800-217. The active syncing of PIV status is called "coupling" in these requirements. 
 
@@ -425,7 +425,7 @@ Figure X, below, provides a view of potential MUR data connections within a matu
 
 <img src="{{site.baseurl}}/assets/playbooks/notional-mur-idms-connections.png" alt="Depiction of MUR connections within IdMS to authoritative attribute sources, policy contributors and governance stakeholders, and IdPs and relying parties." width="800">
 
-"Directionality" is an important conecpt in IGA by presenting clear flow of CRUD events that make up ILM. In defining these flows, agencies should be careful to avoid "loops" in syncing relationships where the source also becomes a destination of the same attribute, either directly, or a multi-hop flow.  
+"Directionality" is an important concept in IGA by presenting a clear flow of CRUD events that make up ILM. In defining these flows, agencies should be careful to avoid "loops" in syncing relationships where the source also becomes a destination of the same attribute, either directly, or a multi-hop flow.  
 
 #### Define data exchange methods ####
 
