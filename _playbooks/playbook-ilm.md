@@ -261,7 +261,7 @@ Identity lifecycle management is the evolution of an identity from creation to d
 
 <img src="{{site.baseurl}}/assets/playbooks/ilm-process-tree.png" alt="Diagram illustrating the three phases of the Identity Lifecycle Process: Creation, Provisioning, and Deactivation" width="800">
 
-### **Stage 1 - Creation**
+### Stage 1 - Creation
 
 The creation stage establishes the identity in one or more authoritative identity repositories by completing identity proofing and verification. When creation and enrollment occurs through distinct transactions, agencies should use biometric capture and match to ensure all enrollment activities are performed with the same user.
 
@@ -273,7 +273,7 @@ Agencies that have No-PIV and Pre-PIV use cases should leverage HSPD-12 enrollme
 
 Agency enrollment records should be consistent with [NIST SP 800-156](https://csrc.nist.gov/pubs/sp/800/156/final){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"}.
 
-### **Stage 2 - Use: Read/Update**
+### Stage 2 - Use: Read/Update
 
 During this phase, "use" of identity records corresponds to distinct ILM functions:
 - *Provisioning*   creates a new resource account or a subscriber account at a credential service provider. 
@@ -294,14 +294,15 @@ IGA tools typically include analytic capabilities to identify unmanaged accounts
 
 Agencies that previously leveraged the CDM Dashboard to implement CRED, BEHAVE, TRUST, and PRIV capabilities for privileged and general users can configure their IGA tools to achieve similar outcomes with visualizations and event handling in IdMS or other cybersecurity tools. 
 
-### **Stage 3 - Deactivate: Delete**
+### Stage 3 - Deactivate: Delete
 
 Deactivation - Deactivate or remove identities associated with a user record. IGA Processes associated with deactivation include suspension, archive, or deletion of accounts and credentials. IGA tools implement variations of "delete" that can be a "hard" or "soft" delete. Consider requiring a human user action to perform a hard delete, and implement second-person review to confirm it. 
 
 Agencies will need to review their privacy, record retention, and log retention requirements when defining the "end" of identity lifecycles in agency ILM policies and when configuring IGA tools. 
 
-#  Agency Actions
-## Step 1. **Document the Process in an Agency Policy**
+##  Agency Actions
+
+### Step 1. Document the Process in an Agency Policy
 
 Document an agency policy to identify the roles and responsibilities required to implement an identity lifecycle management process. It is a good practice to coordinate the document through the agency’s ICAM governance body to ensure all interested stakeholders are aware of the initiative and their respective responsibilities. This document should complement or be included in the agency’s existing ICAM policy. For more information on ICAM program management or the ICAM governance body, see the [ICAM Program Management Playbook](https://www.idmanagement.gov/university/pm/#program-governance-and-leadership){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"} or the [ICAM Governance Framework](https://www.idmanagement.gov/docs/playbook-identity-governance-framework.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"}. The agency policy should include the following elements.
 
@@ -340,7 +341,7 @@ The next section is about architecting and implementing identity lifecycle manag
 ## Step 2. **Architect the Solution**
 ILM is an important part of identity orchestration and applying the principle of least privilege in agency Zero Trust deployments.
 
-#### **Figure 2: Core Zero Trust Logical Components**
+#### Figure 2: Core Zero Trust Logical Components
 
 <img src="{{site.baseurl}}/assets/playbooks/ilm-zero-trust-tree.png" alt="Flowchart showing how user accounts and attributes from various sources are combined into a single Master User Record for access management." width="800">
 
@@ -413,8 +414,8 @@ Vetting incorporates all steps in the end-to-end process, including:
 
 
 
-###  Connecting authoritative data sources to the MUR ##
-#### Establishing source-destination directionality    ### 
+###  Connecting authoritative data sources to the MUR
+#### Establishing source-destination directionality
 Although the MUR is not likely the authoritative source of most enterprise identity attributes, the MUR is typically the exclusive provider to other capabilities that maintain identity records and accounts, including subscriber accounts at IdPs and platforms. Agencies should designate authoritative sources of specific attributes, rather than entire systems, and ensure those capabilities subscribe to MUR for updates to other identity attributes for which they are not the authoritative source. 
 
 The MUR is an important policy management, access review, and event management capability for governance stakeholders across business areas, cyber operations centers, and monitoring functions. These users need access to sensitive MUR data to perform their authorized duties. MUR access requirements and methods should be defined during planning and closely monitored, as well. 
@@ -427,7 +428,7 @@ Figure X, below, provides a view of potential MUR data connections within a matu
 
 "Directionality" is an important concept in IGA by presenting a clear flow of CRUD events that make up ILM. In defining these flows, agencies should be careful to avoid "loops" in syncing relationships where the source also becomes a destination of the same attribute, either directly, or a multi-hop flow.  
 
-#### Define data exchange methods ####
+#### Define data exchange methods
 
 Agencies should consider the available interfaces available to sync identity data. These interfaces may be limited by the source or destination capabilities. Some capabilities may be limited to "flat files" or "diffs" that are periodically downloaded and sent to the destination as a file to be imported. Although this method appears manual and slow, there may be important reasons for selecting flat files, based on the characteristics of the source system and the context of the data. Flat file exchanges present performance limitations, which should be communicated to downstream identity data consumers. The periodicity of exchange and potential fragility of manual or scripted methods may be limitations on least privilege policy enforcement. Flat file exchanges may be adequate for attributes that do not change often.
 
