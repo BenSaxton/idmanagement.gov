@@ -259,7 +259,7 @@ Identity lifecycle management is the evolution of an identity from creation to d
 
 **Figure 1: Identity Lifecycle Process**
 
-<img src="{{site.baseurl}}/assets/playbooks/ilm-process-tree.png" alt="Diagram illustrating the three phases of the Identity Lifecycle Process: Creation, Provisioning, and Deactivation" width="800">
+This playbook intends to help agencies achieve OMB Memo 19-17 outcomes to shift the focus operating model from managing access based solely on credentials to managing the lifecycle of identities and the appropriate job functions and roles as they evolve over time in an agency or the federal government. The [Identity Management services in the Federal ICAM architecture]({{site.baseurl}}/arch/#services-framework-and-service-descriptions){:rel="noopener noreferrer"}{:class="usa-link"} include Creation, Identity Proofing, Provisioning, Maintenance, Identity Aggregation, and Deactivation. These services are collectively known as Identity Lifecycle Management (ILM).
 
 ### Stage 1 - Creation
 
@@ -271,40 +271,7 @@ This stage includes identity document validation, identity verification, remote 
 
 Agencies that have No-PIV and Pre-PIV use cases should leverage HSPD-12 enrollment capabilities and standards to meet non-PIV use cases. Creation for non-PIV subscribers should include biometric enrollment.
 
-Agency enrollment records should be consistent with [NIST SP 800-156](https://csrc.nist.gov/pubs/sp/800/156/final){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"}.
-
-### Stage 2 - Use: Read/Update
-
-During this phase, "use" of identity records corresponds to distinct ILM functions:
-- *Provisioning*   creates a new resource account or a subscriber account at a credential service provider. 
-- *Syncing* polls attribute sources for changes and propagates changes to connected accounts according to governance rules.
-- *Reviewing* access can also be referred to as "recertifying" or "auditing". Access reviews revalidate subscriber and resource account status based on access policy rules. Recertification results may prompt manager action or, if automated, suspend that user's access.
-
-Provisioning additional accounts or entitlements can be implemented using a "birthright" policy--authorization to certain organizational resources is granted based on organizational membership. Birthright entitlements are easily automatable. Typical accounts provisioned in this way include network logon, productivity suite with email, VPN or SASE access, and enterprise authentication service/single sign-on. Agencies that are implementing the Pre-PIV and No-PIV use cases can leverage birthright provisioning during enrollment and bind the FIDO2 authenticator as a part of the encounter. 
-
-Provisioning can also be demand-driven by users or their supervisors, through service desk tickets and workflows, as an example. Low-code user journey tools can also help orchestrate multi-step self-service flows to improve the user experience and guide users through flows tailored to their business units, organizational responsibilities, and access needs.
-
-Provisioning supports additional access requirements as users take on responsibilities.
-
-Syncing refers to updating user profiles across their resource and subscriber accounts based on changes in authoritative data. Syncing helps ensure attributes and access are updated and consistent across applications and services. When there is confidence about updated data, application providers can leverage attributes more dynamically to enhance least privilege within their applications.
-
-Reviewing access is critical to user accountability. Access reviews are critical to compliance for sensitive transactions and verifying internal controls. Access reviews also help reinforce leader and manager control over the activities they are responsible for.
-
-IGA tools typically include analytic capabilities to identify unmanaged accounts. Unmanaged accounts may indicate adversary activity or poor local account controls. Flagging these accounts for review is important. Agencies may elect to automate locking accounts which suspicious activity to allow for mitigation. 
-
-Agencies that previously leveraged the CDM Dashboard to implement CRED, BEHAVE, TRUST, and PRIV capabilities for privileged and general users can configure their IGA tools to achieve similar outcomes with visualizations and event handling in IdMS or other cybersecurity tools. 
-
-### Stage 3 - Deactivate: Delete
-
-Deactivation - Deactivate or remove identities associated with a user record. IGA Processes associated with deactivation include suspension, archive, or deletion of accounts and credentials. IGA tools implement variations of "delete" that can be a "hard" or "soft" delete. Consider requiring a human user action to perform a hard delete, and implement second-person review to confirm it. 
-
-Agencies will need to review their privacy, record retention, and log retention requirements when defining the "end" of identity lifecycles in agency ILM policies and when configuring IGA tools. 
-
-##  Agency Actions
-
-### Step 1. Document the Process in an Agency Policy
-
-Document an agency policy to identify the roles and responsibilities required to implement an identity lifecycle management process. It is a good practice to coordinate the document through the agency’s ICAM governance body to ensure all interested stakeholders are aware of the initiative and their respective responsibilities. This document should complement or be included in the agency’s existing ICAM policy. For more information on ICAM program management or the ICAM governance body, see the [ICAM Program Management Playbook](https://www.idmanagement.gov/university/pm/#program-governance-and-leadership){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"} or the [ICAM Governance Framework](https://www.idmanagement.gov/docs/playbook-identity-governance-framework.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"}. The agency policy should include the following elements.
+Document an agency policy to identify the roles and responsibilities required to implement an identity lifecycle management process. It is a good practice to coordinate the document through the agency’s ICAM governance body to ensure all interested stakeholders are aware of the initiative and their respective responsibilities. This document should complement or be included in the agency’s existing ICAM policy. For more information on ICAM program management or the ICAM governance body, see the [ICAM Program Management Playbook]({{ site.baseurl }}/university/pm/#program-governance-and-leadership){:rel="noopener noreferrer"}{:class="usa-link"} or the [ICAM Governance Framework]({{ site.baseurl }}/docs/playbook-identity-governance-framework.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link"}. The agency policy should include the following elements.
 
 1. Outline the purpose of implementing ILM.
 2. The roles and responsibilities are mapped to the authoritative attribute source. Such as:
@@ -369,7 +336,9 @@ Each tool has a distinct purpose. Your agency should consider your overall ICAM 
 
 Within an agency enterprise IdMS, the master user record (MUR) aggregates user accounts, attributes, entitlements, and issued credentials. The MUR is authoritative and enables governance of other user identity records across the enterprise. 
 
-Although MUR reporting through the CDM dashboard has been suspended, MUR capabilities remain an important part of ISCM as defined within the CDM Technical Capability Volumes. Agencies are encouraged to extend CDM-provided tools and leverage other agency enterprise IdMS tools to implement ILM to advance cybersecurity, efficiency, and accountability outcomes that underpin the assurance of national functions. 
+- Agency Vetting System - Contains investigative and adjudicative results on suitability or fitness for federal employment, eligibility to occupy a sensitive position, eligibility for access to classified information, and eligibility for a federal identity credential (e.g., PIV) and include the NIST 800-63r4 Alternative credential of authentications that feed into the IGA. Consult your Security/Vetting office on IT integration planning and implementation with ILM processes .
+- Credential Management System - An agency’s card management system that assigns PIV, Tokens, and other credential types.
+- Application Analysis - Conducting an internal application analysis from the [Single Sign-On Playbook]({{ site.baseurl }}/playbooks/sso/#step-2-plan-application-integration){:rel="noopener noreferrer"}{:class="usa-link"} to identify which attributes are used across which applications. For example, employee access is dependent on current and complete IT security training. The security training attribute is most likely in the agency’s training system, but specific to application access.
 
 **Figure 3: Account Aggregation to Instantiate a Master User Record**
 
@@ -485,6 +454,36 @@ An example of an orphaned account includes active employee accounts where the em
   </div>
 </div>
 
+The main benefits of a master user record include:
+
+1. A single view of all digital identities within an agency.
+2. Identify users by vetting status, credential type, training status, privileged, and non-privileged accounts.
+3. Aid in cyberstat reporting for ICAM questions.
+4. A foundational element to implement more mature identity processes when integrated with other agency systems such as access management and information technology service management (ITSM).
+
+### Step 4. Integrate with Agency Enterprise Services
+
+An agency can further leverage the benefit of an automated ILM by integrating the master user record with other agency enterprise ICAM IGA services. This integration can aid agencies to automate provisioning, de-provisioning, and reporting as well as in federating both within and external to an agency. In this context, the federation is transferring identity and authentication between networked systems rather than relying on siloed information specific to the target application.
+
+**Figure 7: ILM Integration with Single Sign-On**
+
+<img src="{{site.baseurl}}/assets/playbooks/ilm-sso-integration.png" alt="Diagram showing the integration of Identity Lifecycle Management with Single Sign-On systems to streamline access and identity management." width="800">
+
+The following is an example of the benefits of a master user record and integration with an access management tool for a cross-agency federation use case.
+
+Use Case - An agency employee needs to collaborate with another government agency. The other government agency application requires a specific human resources attribute to access the application. The application is federated with the employee’s home agency and allows a partner agency to use their home single sign-on to authenticate to the tool.
+
+1. The agency adds the human resources attribute to the individual employee record using a bulk update in the Master User Record.
+2. The Master User Record is available to the Single Sign-On tool in an assertion protocol.
+3. The Single Sign-On adds the additional human resource attribute in an assertion to the partner application to facilitate authentication and authorization in the partner application.
+
+Make attributes available for authorization decisions. Federation is not only accepting credentials as proof from other agencies but also making your identity credentials available to other agencies.
+
+- Attributes are available to your agency via SSO assertions.
+- Focus on the best practice of using assertion protocols rather than exposing attributes externally.
+- Focus on authorization through federation rather than on PIV. PIV is a static credential with static attributes. SSO with Federation is dynamic-based on the SSO integration with a master user record. It is easier to update a directory than a PIV credential.
+
+See the [Cloud Identity Playbook Federation section]({{ site.baseurl }}/playbooks/cloud/#federation){:rel="noopener noreferrer"}{:class="usa-link"} for more information on federation and using trust frameworks for government, mission partner, or public identity federation.
 
 ## Summary
 
@@ -507,8 +506,8 @@ The ILM playbook outlined an identity lifecycle process and four steps to implem
 
 ### Government-Wide Guidance
 
-1. [FICAM Architecture](https://www.idmanagement.gov/why/icam/)
-2. [ICAM Governance Framework](https://www.idmanagement.gov/docs/playbook-identity-governance-framework.pdf)
+1. [FICAM Architecture]({{ site.baseurl }}/why/icam/){:class="usa-link"}
+2. [ICAM Governance Framework]({{ site.baseurl }}/docs/playbook-identity-governance-framework.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link"}
 3. [NIST Special Publication 800-63 Additional Information Sources Including Conformance Criteria](https://pages.nist.gov/800-63-3/){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"}
 4. [NIST Interagency Report 8149 - Developing Trust Frameworks to Support Identity Federations](https://csrc.nist.gov/publications/detail/nistir/8149/final){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"}
 5. [OPM Credentialing Standards Procedures for Issuing Personal Identity Verification Cards under HSPD-12 and New Requirement for Suspension or Revocation of Eligibility for PIV Credentials](https://www.opm.gov/suitability/suitability-executive-agent/policy/cred-standards.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link usa-link--external"}
