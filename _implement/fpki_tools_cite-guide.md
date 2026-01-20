@@ -28,7 +28,7 @@ subnav:
 Prepared By: The FPKI Technical Working Group (TWG)  <br>
 An FPKI Policy Authority Working Group
 
-Updated: September 7, 2022 <br>
+Updated: January 20, 2026 <br>
 
 ## Overview
 
@@ -453,6 +453,7 @@ See [Federal PKI Federal Common Policy](#federal-pki-federal-common-policy){:cla
 | 1.3.6.1.4.1.38099.1.1.1.207 | tscp-certpcy-PIVI-ContentSigning | 1.3.6.1.4.1.38099.1.1.1.7 |
 | 1.3.6.1.4.1.38099.1.1.1.212 | tscp-certpcy-MediumDevice | 1.3.6.1.4.1.38099.1.1.1.12 |
 | 1.3.6.1.4.1.38099.1.1.1.213 | tscp-certpcy-MediumDeviceHardware | 1.3.6.1.4.1.38099.1.1.1.13 |
+
 
 
 
