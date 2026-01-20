@@ -39,6 +39,7 @@ The Community Interoperability Test Environment (CITE) was established as the FP
 - [Scheduled and Unscheduled Testing](#scheduled-and-unscheduled-testing){:class="usa-link"}
 - [Repository Availability](#repository-availability){:class="usa-link"}
 - [Technical Support Availability](#technical-support-availability){:class="usa-link"}
+- [Test Certificate Profiles](#test-certificate-profiles){:class="usa-link"}
 - [Test Websites](#test-websites){:class="usa-link"}
 - [Appendix A - Test Policy Object Identifiers](#appendix-a---test-policy-object-identifiers){:class="usa-link"}
 
@@ -114,7 +115,7 @@ CITE Participants shall provide the FPKI Technical Working Group with email and 
 
 CITE participants, to include applicants of the Shared Service Provider (SSP) program, should leverage the following FPKIPA defined certificate profiles to facilitate their use case or compliance testing (links provided will always reference the most updated profile version):
 - [Common Policy X.509 Certificate and CRL Profiles]({{site.baseurl}}/docs/fpki-x509-cert-profile-common.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link"}
-- [Federal Bridge Certifciation Authority (FBCA) X.509 Certificate and CRL Extensions Profiles]({{site.baseurl}}/docs/fpki-x509-cert-profiles-fbca.pdf){:rel="noopener noreferrer"}{:class="usa-link"}
+- [Federal Bridge Certifciation Authority FBCA X.509 Certificate and CRL Extensions Profiles]({{site.baseurl}}/docs/fpki-x509-cert-profiles-fbca.pdf){:rel="noopener noreferrer"}{:class="usa-link"}
 
 {% include alert-info.html heading = "Draft PQC Profiles" content="the FPKIMA has developed [draft PQC Certificate and CRL Profiles]({{site.baseurl}}/docs/fpki-x509-cert-profiles-pqc.pdf){:rel="noopener noreferrer"}{:class="usa-link"} to allow potential CITE participants the ability to develop appropriate CA and end entity certificates that leverage draft PQC cryptography.  Test certificate policy object identifiers (OIDs) are consistent with those defined in [Appendix A](#appendix-a---test-policy-object-identifiers){:class="usa-link"} below for consistency, however, other relevant certificate fields such as siganture algorithm and public key have been updated to faciltiate PQC test cases." %}
 
@@ -452,6 +453,7 @@ See [Federal PKI Federal Common Policy](#federal-pki-federal-common-policy){:cla
 | 1.3.6.1.4.1.38099.1.1.1.207 | tscp-certpcy-PIVI-ContentSigning | 1.3.6.1.4.1.38099.1.1.1.7 |
 | 1.3.6.1.4.1.38099.1.1.1.212 | tscp-certpcy-MediumDevice | 1.3.6.1.4.1.38099.1.1.1.12 |
 | 1.3.6.1.4.1.38099.1.1.1.213 | tscp-certpcy-MediumDeviceHardware | 1.3.6.1.4.1.38099.1.1.1.13 |
+
 
 
 
