@@ -117,7 +117,7 @@ CITE participants, to include applicants of the Shared Service Provider (SSP) pr
 - [Common Policy X.509 Certificate and CRL Profiles]({{site.baseurl}}/docs/fpki-x509-cert-profile-common.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link"}
 - [Federal Bridge Certification Authority FBCA X.509 Certificate and CRL Extensions Profiles]({{site.baseurl}}/docs/fpki-x509-cert-profiles-fbca.pdf){:rel="noopener noreferrer"}{:class="usa-link"}
 
-The FPKIMA has developed [draft PQC Certificate and CRL Profiles]({{site.baseurl}}/docs/fpki-x509-cert-profiles-common-pqc.pdf){:rel="noopener noreferrer"}{:class="usa-link"} to allow potential CITE participants the ability to develop appropriate CA and end entity certificates that leverage draft PQC cryptography.  Test certificate policy object identifiers (OIDs) are consistent with those defined in [Appendix A](#appendix-a---test-policy-object-identifiers){:class="usa-link"} below for consistency, however, other relevant certificate fields such as signature algorithm and public key have been updated to facilitate PQC test cases.
+The FPKIMA has developed [draft PQC Certificate and CRL Profiles]({{site.baseurl}}/docs/fpki-x509-cert-profile-common-pqc.pdf){:rel="noopener noreferrer"}{:class="usa-link"} to allow potential CITE participants the ability to develop appropriate CA and end entity certificates that leverage draft PQC cryptography.  Test certificate policy object identifiers (OIDs) are consistent with those defined in [Appendix A](#appendix-a---test-policy-object-identifiers){:class="usa-link"} below for consistency, however, other relevant certificate fields such as signature algorithm and public key have been updated to facilitate PQC test cases.
 
 ## Test Websites
 
@@ -453,6 +453,7 @@ See [Federal PKI Federal Common Policy](#federal-pki-federal-common-policy){:cla
 | 1.3.6.1.4.1.38099.1.1.1.207 | tscp-certpcy-PIVI-ContentSigning | 1.3.6.1.4.1.38099.1.1.1.7 |
 | 1.3.6.1.4.1.38099.1.1.1.212 | tscp-certpcy-MediumDevice | 1.3.6.1.4.1.38099.1.1.1.12 |
 | 1.3.6.1.4.1.38099.1.1.1.213 | tscp-certpcy-MediumDeviceHardware | 1.3.6.1.4.1.38099.1.1.1.13 |
+
 
 
 
