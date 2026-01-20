@@ -52,7 +52,7 @@ Relying Party application testing ensures that application modules operate as in
 
 This document does not define how to perform testing in CITE. That is a responsibility of the CITE Participants. Some examples of testing conducted in CITE include:
 1. Interoperability testing between cross-certified Certification Authorities (CAs);
-2. Transition testing to new algorithms (e.g., SHA-2, ECC);
+2. Transition testing to new algorithms (e.g., SHA-2, ECC, PQC);
 3. PIV and PIV-I credential interoperability testing;
 4. Repository access testing when using content delivery networks, load balancers, or other networking configurations; and
 5. Path discovery and/or validation testing for an application
@@ -109,6 +109,14 @@ CITE Participant repositories should be available during regular business hours 
 CITE Participants shall provide the FPKI Technical Working Group with email and phone information for at least two technical contacts to help coordinate any technical service issues. In lieu of providing individual names for technical POCs, CITE Participants may establish a group or other organizational-based email addresses for communications with the appropriate technical contacts. This information will only be made available (in a controlled manner) to CITE Participants, FPKI Applicants (if applicable), and vendors supporting the FPKI as needed during testing or troubleshooting. CITE Participants involved in scheduled testing shall provide the issuance, management, and troubleshooting necessary to help resolve any issues.
 
 {% include alert-warning.html content="CITE Participant technical support is only available for scheduled testing with any outage resolved on a best effort basis. " %} <br>
+
+## Test Certificate Profiles
+
+CITE participants, to include applicants of the Shared Service Provider (SSP) program, should leverage the following FPKIPA defined certificate profiles to facilitate their use case or compliance testing (links provided will always reference the most updated profile version):
+- [Common Policy X.509 Certificate and CRL Profiles]({{site.baseurl}}/docs/fpki-x509-cert-profile-common.pdf){:target="_blank"}{:rel="noopener noreferrer"}{:class="usa-link"}
+- [Federal Bridge Certifciation Authority (FBCA) X.509 Certificate and CRL Extensions Profiles]({{site.baseurl}}/docs/fpki-x509-cert-profiles-fbca.pdf){:rel="noopener noreferrer"}{:class="usa-link"}
+
+{% include alert-info.html heading = "Draft PQC Profiles" content="the FPKIMA has developed [draft PQC Certificate and CRL Profiles]({{site.baseurl}}/docs/fpki-x509-cert-profiles-pqc.pdf){:rel="noopener noreferrer"}{:class="usa-link"} to allow potential CITE participants the ability to develop appropriate CA and end entity certificates that leverage draft PQC cryptography.  Test certificate policy object identifiers (OIDs) are consistent with those defined in [Appendix A](#appendix-a---test-policy-object-identifiers){:class="usa-link"} below for consistency, however, other relevant certificate fields such as siganture algorithm and public key have been updated to faciltiate PQC test cases." %}
 
 ## Test Websites
 
@@ -444,5 +452,6 @@ See [Federal PKI Federal Common Policy](#federal-pki-federal-common-policy){:cla
 | 1.3.6.1.4.1.38099.1.1.1.207 | tscp-certpcy-PIVI-ContentSigning | 1.3.6.1.4.1.38099.1.1.1.7 |
 | 1.3.6.1.4.1.38099.1.1.1.212 | tscp-certpcy-MediumDevice | 1.3.6.1.4.1.38099.1.1.1.12 |
 | 1.3.6.1.4.1.38099.1.1.1.213 | tscp-certpcy-MediumDeviceHardware | 1.3.6.1.4.1.38099.1.1.1.13 |
+
 
 
